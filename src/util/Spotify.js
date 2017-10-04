@@ -1,5 +1,5 @@
 const clientId = 'e1d75cc360424af89800574c525a3b22';
-const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'http://vestial_jammming.surge.sh';
 
 let accessToken;
 
@@ -26,8 +26,6 @@ const Spotify = {
     }
   },
 
-  // end getAccessToken
-
   search(term) {
     const accessToken = Spotify.getAccessToken();
     let endPointUrl = 'https://api.spotify.com/v1/search?type=track&q=';
@@ -45,7 +43,6 @@ const Spotify = {
         if (!jsonResponse.tracks) {
           return [];
         }
-        // console.log(jsonResponse);
         return jsonResponse.tracks.items.map(track => ({
           id: track.id,
           name: track.name,
@@ -55,8 +52,6 @@ const Spotify = {
         }));
       });
   },
-
-  //end search
 
   savePlaylist(name, trackUris) {
     if (!name || !trackUris) {
@@ -90,11 +85,7 @@ const Spotify = {
           });
         });
     });
-
   }
-
-  //end save playlist
-
 };
 
 export default Spotify;
