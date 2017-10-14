@@ -1,5 +1,5 @@
 const clientId = 'e1d75cc360424af89800574c525a3b22'
-const redirectUri = 'http://localhost:3000'
+const redirectUri = 'http://vestial-jammming.surge.sh'
 
 let accessToken
 
@@ -12,10 +12,10 @@ const Spotify = {
     const windowAccessToken = window.location.href.match(/access_token=([^&]*)/)
     const windowExpiresIn = window.location.href.match(/expires_in=([^&]*)/)
     if (windowExpiresIn && windowAccessToken) {
-      accessToken = windowAccessToken[1] // Needs to be [1] since it shows as 2nd in array.
-      const expiresIn = Number(windowExpiresIn[1]) // 2nd in array, but also need to convert to number
-      window.setTimeout(() => (accessToken = ''), expiresIn * 1000) //this is token expiration
-      window.history.pushState('Access Token', null, '/') //clears params from URL
+      accessToken = windowAccessToken[1] 
+      const expiresIn = Number(windowExpiresIn[1]) 
+      window.setTimeout(() => (accessToken = ''), expiresIn * 1000) 
+      window.history.pushState(accessToken, null, '/') 
       return accessToken
     } else {
       const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`

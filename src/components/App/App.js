@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import logo from './background_photo_desktop.jpg'
 import SearchBar from '../SearchBar/SearchBar'
 import SearchResults from '../SearchResults/SearchResults'
 import Playlist from '../Playlist/Playlist'
