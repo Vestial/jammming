@@ -32,3 +32,60 @@
   font-weight: 300;
   color: rgba(256, 256, 256, 0.8);
 }
+
+.Track-preview-album {
+  margin-right: 10px;
+  margin-top: 2px;
+  opacity: 1;
+  z-index: 0;
+}
+
+.Track-preview:hover img {
+  opacity: .3;
+}
+
+.Track-preview:hover i {
+  visibility: visible;
+}
+
+.Track-preview:hover p {
+  opacity: 1;
+  visibility: visible;
+}
+
+.Track-preview.audio {
+  visibility: hidden;
+}
+
+.Track-preview-container {
+  position: relative;
+}
+
+.Track-preview-icon-play {
+  opacity: .5;
+  position: absolute;
+  margin-left: 19px;
+  margin-top: 17px;
+  z-index: 2;
+  visibility: hidden;
+}
+
+.Track-preview-icon-pause {
+  opacity: .5;
+  position: absolute;
+  margin-left: 16px;
+  margin-top: 17px;
+  z-index: 2;
+  visibility: hidden;
+}
+
+.Track-preview-unavailable {
+  font-size: 10px;
+  opacity: 1;
+  display: block;
+  position: absolute;
+  text-align: center;
+  margin-left: 4px;
+  margin-top: 20px;
+  visibility: hidden;
+}
