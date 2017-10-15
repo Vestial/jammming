@@ -5,7 +5,7 @@ class Track extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      playing: false,
+      playing: false
     }
     this.addTrack = this.addTrack.bind(this)
     this.removeTrack = this.removeTrack.bind(this)
@@ -43,8 +43,7 @@ class Track extends React.Component {
       this.setState({
         playing: true
       })
-    }
-     else {
+    } else {
       audio.pause()
       this.setState({
         playing: false
@@ -88,9 +87,7 @@ class Track extends React.Component {
             src={this.props.track.preview}
             onEnded={() => this.setState({playing: false})}
           />
-          <div className="Track-preview-container">
-            {this.renderIcons()}
-          </div>
+          <div className="Track-preview-container">{this.renderIcons()}</div>
           <img
             className="Track-preview-album"
             src={this.props.track.cover}

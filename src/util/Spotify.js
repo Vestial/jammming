@@ -12,10 +12,10 @@ const Spotify = {
     const windowAccessToken = window.location.href.match(/access_token=([^&]*)/)
     const windowExpiresIn = window.location.href.match(/expires_in=([^&]*)/)
     if (windowExpiresIn && windowAccessToken) {
-      accessToken = windowAccessToken[1] 
-      const expiresIn = Number(windowExpiresIn[1]) 
-      window.setTimeout(() => (accessToken = ''), expiresIn * 1000) 
-      window.history.pushState(accessToken, null, '/') 
+      accessToken = windowAccessToken[1]
+      const expiresIn = Number(windowExpiresIn[1])
+      window.setTimeout(() => (accessToken = ''), expiresIn * 1000)
+      window.history.pushState(accessToken, null, '/')
       return accessToken
     } else {
       const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`
